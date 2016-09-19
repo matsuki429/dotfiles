@@ -46,6 +46,7 @@ set smartindent   " 改行時に入力された行の末尾に合わせて次の
 " 入力の設定
 inoremap <silent> jj <ESC> " jjで挿入モードからノーマルモードに以降
 set clipboard+=unnamed
+set backspace=indent,eol,start
 
 " コマンドラインの設定
 
@@ -61,3 +62,49 @@ set history=10000
 " ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
+
+
+
+" Neobundle
+
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+
+
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+
+
+" ここにプラグインを記述
+" NERDTreeを設定
+NeoBundle 'scrooloose/nerdtree'
+
+
+
+call neobundle#end()
+
+
+
+" Required:
+filetype plugin indent on
+
+
+
+" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
+NeoBundleCheck
+
+
+
+"-------------------------
+" End Neobundle Settings.
+"-------------------------
